@@ -1,0 +1,18 @@
+Graph::Graph(int v)
+{
+	this->m_V = v;
+	m_G = new std::list<int>[m_V];
+	m_diam = 0;
+	m_deg_v = vector <int>(m_V, 0);
+	m_distance = vector <float>(m_V, INFINITY);
+	m_Pai = vector<int>(m_V, NULL);
+}
+
+	Graph g(5);
+	g.addEdge(0, 1);
+	g.addEdge(0, 2);
+	g.addEdge(1, 2);
+	g.addEdge(3, 2);
+	g.addEdge(3, 4);
+	g.Diameter();
+	cout << "diam = " << g.m_diam;
